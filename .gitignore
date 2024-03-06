@@ -1,4 +1,4 @@
-node_modules
+/node_modules/*
 
-!node_modules/oslo
-!node_modules/@node_rs
+!/node_modules/oslo/
+!/node_modules/@node_rs/
