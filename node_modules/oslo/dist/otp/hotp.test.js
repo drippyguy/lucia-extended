@@ -1,76 +1,17 @@
-import { expect } from "vitest";
-import { test } from "vitest";
-import { generateHOTP } from "./hotp.js";
-test("generateHOTP()", async () => {
-  const secret = new Uint8Array([
-    99,
-    7,
-    135,
-    6,
-    228,
-    137,
-    27,
-    7,
-    133,
-    186,
-    66,
-    189,
-    35,
-    172,
-    221,
-    9,
-    228,
-    105,
-    51,
-    99,
-    190,
-    250,
-    37,
-    164,
-    19,
-    70,
-    238,
-    11,
-    218,
-    176,
-    114,
-    76,
-    160,
-    143,
-    141,
-    38,
-    99,
-    14,
-    181,
-    108,
-    163,
-    253,
-    206,
-    108,
-    192,
-    14,
-    248,
-    101,
-    109,
-    31,
-    235,
-    199,
-    53,
-    146,
-    135,
-    22,
-    61,
-    17,
-    52,
-    32,
-    0,
-    122,
-    24,
-    28
-  ]);
-  expect(generateHOTP(secret, 0)).resolves.toBe("173573");
-  expect(generateHOTP(secret, 10)).resolves.toBe("110880");
-  expect(generateHOTP(secret, 100)).resolves.toBe("020803");
-  expect(generateHOTP(secret, 1e3)).resolves.toBe("115716");
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const vitest_1 = require("vitest");
+const vitest_2 = require("vitest");
+const hotp_js_1 = require("./hotp.js");
+(0, vitest_2.test)("generateHOTP()", async () => {
+    const secret = new Uint8Array([
+        0x63, 0x07, 0x87, 0x06, 0xe4, 0x89, 0x1b, 0x07, 0x85, 0xba, 0x42, 0xbd, 0x23, 0xac, 0xdd, 0x09,
+        0xe4, 0x69, 0x33, 0x63, 0xbe, 0xfa, 0x25, 0xa4, 0x13, 0x46, 0xee, 0x0b, 0xda, 0xb0, 0x72, 0x4c,
+        0xa0, 0x8f, 0x8d, 0x26, 0x63, 0x0e, 0xb5, 0x6c, 0xa3, 0xfd, 0xce, 0x6c, 0xc0, 0x0e, 0xf8, 0x65,
+        0x6d, 0x1f, 0xeb, 0xc7, 0x35, 0x92, 0x87, 0x16, 0x3d, 0x11, 0x34, 0x20, 0x00, 0x7a, 0x18, 0x1c
+    ]);
+    (0, vitest_1.expect)((0, hotp_js_1.generateHOTP)(secret, 0)).resolves.toBe("173573");
+    (0, vitest_1.expect)((0, hotp_js_1.generateHOTP)(secret, 10)).resolves.toBe("110880");
+    (0, vitest_1.expect)((0, hotp_js_1.generateHOTP)(secret, 100)).resolves.toBe("020803");
+    (0, vitest_1.expect)((0, hotp_js_1.generateHOTP)(secret, 1000)).resolves.toBe("115716");
 });
-//# sourceMappingURL=hotp.test.js.map

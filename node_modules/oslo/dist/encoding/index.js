@@ -1,22 +1,22 @@
-import { encodeHex, decodeHex } from "./hex.js";
-import { Base32Encoding, base32, base32hex } from "./base32.js";
-import { Base64Encoding, base64, base64url } from "./base64.js";
-import { encodeBase32, decodeBase32 } from "./base32.js";
-import { encodeBase64, encodeBase64url, decodeBase64, decodeBase64url } from "./base64.js";
-export {
-  Base32Encoding,
-  Base64Encoding,
-  base32,
-  base32hex,
-  base64,
-  base64url,
-  decodeBase32,
-  decodeBase64,
-  decodeBase64url,
-  decodeHex,
-  encodeBase32,
-  encodeBase64,
-  encodeBase64url,
-  encodeHex
-};
-//# sourceMappingURL=index.js.map
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.decodeBase64url = exports.decodeBase64 = exports.encodeBase64url = exports.encodeBase64 = exports.decodeBase32 = exports.encodeBase32 = exports.base64url = exports.base64 = exports.Base64Encoding = exports.base32hex = exports.base32 = exports.Base32Encoding = exports.decodeHex = exports.encodeHex = void 0;
+var hex_js_1 = require("./hex.js");
+Object.defineProperty(exports, "encodeHex", { enumerable: true, get: function () { return hex_js_1.encodeHex; } });
+Object.defineProperty(exports, "decodeHex", { enumerable: true, get: function () { return hex_js_1.decodeHex; } });
+var base32_js_1 = require("./base32.js");
+Object.defineProperty(exports, "Base32Encoding", { enumerable: true, get: function () { return base32_js_1.Base32Encoding; } });
+Object.defineProperty(exports, "base32", { enumerable: true, get: function () { return base32_js_1.base32; } });
+Object.defineProperty(exports, "base32hex", { enumerable: true, get: function () { return base32_js_1.base32hex; } });
+var base64_js_1 = require("./base64.js");
+Object.defineProperty(exports, "Base64Encoding", { enumerable: true, get: function () { return base64_js_1.Base64Encoding; } });
+Object.defineProperty(exports, "base64", { enumerable: true, get: function () { return base64_js_1.base64; } });
+Object.defineProperty(exports, "base64url", { enumerable: true, get: function () { return base64_js_1.base64url; } });
+var base32_js_2 = require("./base32.js");
+Object.defineProperty(exports, "encodeBase32", { enumerable: true, get: function () { return base32_js_2.encodeBase32; } });
+Object.defineProperty(exports, "decodeBase32", { enumerable: true, get: function () { return base32_js_2.decodeBase32; } });
+var base64_js_2 = require("./base64.js");
+Object.defineProperty(exports, "encodeBase64", { enumerable: true, get: function () { return base64_js_2.encodeBase64; } });
+Object.defineProperty(exports, "encodeBase64url", { enumerable: true, get: function () { return base64_js_2.encodeBase64url; } });
+Object.defineProperty(exports, "decodeBase64", { enumerable: true, get: function () { return base64_js_2.decodeBase64; } });
+Object.defineProperty(exports, "decodeBase64url", { enumerable: true, get: function () { return base64_js_2.decodeBase64url; } });
