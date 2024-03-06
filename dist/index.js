@@ -1,15 +1,15 @@
-import { Lucia } from "./core.js";
-import { Scrypt, LegacyScrypt, generateId } from "./crypto.js";
-import { TimeSpan } from "oslo";
-import { Cookie } from "oslo/cookie";
-import { verifyRequestOrigin } from "oslo/request";
-export {
-  Cookie,
-  LegacyScrypt,
-  Lucia,
-  Scrypt,
-  TimeSpan,
-  generateId,
-  verifyRequestOrigin
-};
-//# sourceMappingURL=index.js.map
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.verifyRequestOrigin = exports.Cookie = exports.TimeSpan = exports.generateId = exports.LegacyScrypt = exports.Scrypt = exports.Lucia = void 0;
+var core_js_1 = require("./core.js");
+Object.defineProperty(exports, "Lucia", { enumerable: true, get: function () { return core_js_1.Lucia; } });
+var crypto_js_1 = require("./crypto.js");
+Object.defineProperty(exports, "Scrypt", { enumerable: true, get: function () { return crypto_js_1.Scrypt; } });
+Object.defineProperty(exports, "LegacyScrypt", { enumerable: true, get: function () { return crypto_js_1.LegacyScrypt; } });
+Object.defineProperty(exports, "generateId", { enumerable: true, get: function () { return crypto_js_1.generateId; } });
+var oslo_1 = require("oslo");
+Object.defineProperty(exports, "TimeSpan", { enumerable: true, get: function () { return oslo_1.TimeSpan; } });
+var cookie_1 = require("oslo/cookie");
+Object.defineProperty(exports, "Cookie", { enumerable: true, get: function () { return cookie_1.Cookie; } });
+var request_1 = require("oslo/request");
+Object.defineProperty(exports, "verifyRequestOrigin", { enumerable: true, get: function () { return request_1.verifyRequestOrigin; } });
