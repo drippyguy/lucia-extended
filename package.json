@@ -43,8 +43,5 @@
 	},
 	"dependencies": {
 		"oslo": "github:drippyguy/oslo"
-	},
-	"peerDependencies": {
-		"oslo": "github:drippyguy/oslo"
 	}
 }
