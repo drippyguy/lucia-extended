@@ -42,6 +42,6 @@
 		"zx": "^7.2.3"
 	},
 	"dependencies": {
-		"oslo": "https://gitpkg.vercel.app/drippyguy/oslo?cjs"
+		"oslo": "drippyguy/oslo#cjs"
 	}
 }
