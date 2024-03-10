@@ -1,17 +1,17 @@
 import { TimeSpan } from "oslo";
 import type { Cookie } from "oslo/cookie";
 import type { Adapter } from "./database.js";
-import type { RegisteredDatabaseSessionAttributes, RegisteredDatabaseUserAttributes, RegisteredLucia } from "./index.js";
+import type { RegisteredDatabaseSessionAttributes, RegisteredDatabaseUserAttributes, RegisteredLucia, UserId } from "./index.js";
 type SessionAttributes = RegisteredLucia extends Lucia<infer _SessionAttributes, any> ? _SessionAttributes : {};
 type UserAttributes = RegisteredLucia extends Lucia<any, infer _UserAttributes> ? _UserAttributes : {};
 export interface Session extends SessionAttributes {
     id: string;
     expiresAt: Date;
     fresh: boolean;
-    userId: string;
+    userId: UserId;
 }
 export interface User extends UserAttributes {
-    id: string;
+    id: UserId;
 }
 export declare class Lucia<_SessionAttributes extends {} = Record<never, never>, _UserAttributes extends {} = Record<never, never>> {
     private adapter;
@@ -26,7 +26,7 @@ export declare class Lucia<_SessionAttributes extends {} = Record<never, never>,
         getSessionAttributes?: (databaseSessionAttributes: RegisteredDatabaseSessionAttributes) => _SessionAttributes;
         getUserAttributes?: (databaseUserAttributes: RegisteredDatabaseUserAttributes) => _UserAttributes;
     });
-    getUserSessions(userId: string): Promise<Session[]>;
+    getUserSessions(userId: UserId): Promise<Session[]>;
     validateSession(sessionId: string): Promise<{
         user: User;
         session: Session;
@@ -34,11 +34,11 @@ export declare class Lucia<_SessionAttributes extends {} = Record<never, never>,
         user: null;
         session: null;
     }>;
-    createSession(userId: string, attributes: RegisteredDatabaseSessionAttributes, options?: {
+    createSession(userId: UserId, attributes: RegisteredDatabaseSessionAttributes, options?: {
         sessionId?: string;
     }): Promise<Session>;
     invalidateSession(sessionId: string): Promise<void>;
-    invalidateUserSessions(userId: string): Promise<void>;
+    invalidateUserSessions(userId: UserId): Promise<void>;
     deleteExpiredSessions(): Promise<void>;
     readSessionCookie(cookieHeader: string): string | null;
     readBearerToken(authorizationHeader: string): string | null;

@@ -10,6 +10,9 @@ export type { CookieAttributes } from "oslo/cookie";
 import type { Lucia } from "./core.js";
 export interface Register {
 }
+export type UserId = Register extends {
+    UserId: infer _UserId;
+} ? _UserId : string;
 export type RegisteredLucia = Register extends {
     Lucia: infer _Lucia;
 } ? _Lucia extends Lucia<any, any> ? _Lucia : Lucia : Lucia;
